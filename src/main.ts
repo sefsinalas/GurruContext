@@ -30,6 +30,12 @@ class GurruContextoApp {
     this.createAppLayout();
     await this.loadOrCreateGame(TODAY_DATE);
     this.render();
+
+    // Auto-open Admin/Generator modal if URL contains ?admin=true or #admin
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('admin') === 'true' || window.location.hash === '#admin') {
+      this.openAdminModal();
+    }
   }
 
   private createAppLayout(): void {
