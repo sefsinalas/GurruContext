@@ -100,7 +100,6 @@ class GurruContextoApp {
       this.gameData.gameId,
       () => this.openStatsModal(),
       () => this.openHelpModal(),
-      () => this.openAdminModal(),
       () => this.handleHeaderShare()
     );
 
